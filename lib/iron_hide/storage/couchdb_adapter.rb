@@ -6,7 +6,6 @@ require 'typhoeus'
 module IronHide
   class Storage
     class CouchdbAdapter
-      attr_reader :rules
 
       # @option opts [String] :resource *required*
       # @option opts [String] :action *required*
