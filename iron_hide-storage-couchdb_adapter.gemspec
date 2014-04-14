@@ -24,6 +24,4 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "typhoeus", "~> 0.6.8"
   spec.add_runtime_dependency "multi_json"
   spec.add_runtime_dependency "couchrest", "~> 1.2"
-
-
 end

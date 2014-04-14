@@ -25,54 +25,53 @@ The best resource for getting started with CouchDB is http://guide.couchdb.org/
 
 Using brew:
 
-    ```
-    brew install couchdb
-    couchdb # Starts the server
-    ```
+```
+brew install couchdb
+couchdb # Starts the server
+```
 
 
 ### Setup the server for use with IronHide
 To install the helper Rake tasks:
 
-    ```ruby
-    # Rakefile
-    require 'rake'
-    require 'iron_hide/couchdb_tasks'
-    ```
+```ruby
+# Rakefile
+require 'rake'
+require 'iron_hide/couchdb_tasks'
+```
 
 To create a new database, either use the HTTP API, Futon, or this simple Rake task:
 
-    ```
-    bundle exec rake iron_hide:create_db\['http://127.0.0.1:5984/rules'\]
-    ```
+```
+bundle exec rake iron_hide:create_db\['http://127.0.0.1:5984/rules'\]
+```
 
 To upload some rules to this database:
 
-    ```
-    bundle exec rake iron_hide:load_rules\['/absolute/path/file.json','http://127.0.0.1:5984/rules'\]
-    ```
+```
+bundle exec rake iron_hide:load_rules\['/absolute/path/file.json','http://127.0.0.1:5984/rules'\]
+```
 
 Note: Required step
 Setup the required views
 
-    ```
-    bundle exec iron_hide:rake create_views\['http://127.0.0.1:5984/rules'\]
-    ```
+```
+bundle exec iron_hide:rake create_views\['http://127.0.0.1:5984/rules'\]
+```
 
 ## Usage
 
-    ```ruby
-    require 'iron_hide'
-    require 'iron_hide/storage/couchdb_adapter'
+```ruby
+require 'iron_hide'
+require 'iron_hide/storage/couchdb_adapter'
 
-    IronHide.config do |c|
-      c.adapter          = :couchdb
-      c.namespace        = 'TestApp'
-      c.couchdb_server   = 'http://127.0.0.1:5984' # Default
-      c.couchdb_database = 'rules' # Default
-    end
-    ```
-
+IronHide.config do |c|
+    c.adapter          = :couchdb
+    c.namespace        = 'TestApp'
+    c.couchdb_server   = 'http://127.0.0.1:5984' # Default
+    c.couchdb_database = 'rules' # Default
+end
+```
 
 ## Contributing
 
