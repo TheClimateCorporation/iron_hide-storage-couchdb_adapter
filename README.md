@@ -1,5 +1,7 @@
 # IronHide::Storage::CouchdbAdapter
 
+[![Gem Version](https://badge.fury.io/rb/iron_hide-storage-couchdb_adapter.svg)](http://badge.fury.io/rb/iron_hide-storage-couchdb_adapter)
+
 A CouchDB adapter for the IronHide authorization library.
 
 ## Installation
